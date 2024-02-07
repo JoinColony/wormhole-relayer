@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model bridgingTransactions {
+  fromWormholeChainId String
+  sender      String
+  sequence    String
+  txHashIn    String
+  logIndexIn  Int
+  txHashOut   String?
+  toWormholeChainId   String
+
+  @@id([fromWormholeChainId, sender, sequence]) // This is the VAA ID
+}
+
+model chains {
+  chainId             String    @id
+  wormholeChainId     String
+  lastBlockProcessed  Int
+  rpcEndpoint         String
+  wormholeAddress     String
+  colonyBridgeAddress String
+}

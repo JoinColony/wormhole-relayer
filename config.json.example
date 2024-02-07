@@ -1,0 +1,14 @@
+{
+    "networks": {
+        "<networkName>": {
+            "rpcUrl": "",
+            "chainId": "",
+            "wormholeChainId": "",
+            "wormholeCoreAddress": "",
+            "colonyWormholeBridgeAddress":  ""
+
+        },
+    },
+    "miningNetwork": "<networkName>",
+    "wormholeEndpoint": "https://api.testnet.wormholescan.io/api/v1/"
+}
